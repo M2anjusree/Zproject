@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Zomato - Poster</title>
+  <style>
+    :root{
+      --bg:#d9302a; /* zomato-like red */
+      --white:#ffffff;
+      --muted:rgba(255,255,255,0.95);
+      --card:#fff;
+      --shadow: 0 10px 30px rgba(0,0,0,0.12);
+      --max-width:1000px;
+      --gap:28px;
+      font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    }
+
+    html,body{height:100%;margin:0}
+    body{
+      background: linear-gradient(180deg,var(--bg) 0%, #c52a27 100%);
+      display:flex;align-items:center;justify-content:center;
+      padding:48px 20px;box-sizing:border-box;color:var(--white);
+    }
+
+    .poster{
+      width:100%;max-width:var(--max-width);background:transparent;display:grid;
+      grid-template-columns: 1fr 420px;gap:var(--gap);align-items:center;
+      border-radius:18px;overflow:visible;
+    }
+
+    /* left column */
+    .left{padding:48px 40px 56px}
+    .logo{font-weight:800;font-size:96px;line-height:0.9;margin:0 0 6px}
+    .subtitle{font-weight:600;font-size:22px;margin:0 0 24px;opacity:0.98}
+    .desc{font-size:18px;line-height:1.5;margin:0 0 32px;max-width:560px;opacity:0.95}
+
+    .features{display:flex;flex-direction:column;gap:18px;margin-bottom:44px}
+    .feature{display:flex;gap:14px;align-items:center;font-size:20px}
+    .icon{
+      width:36px;height:36px;border-radius:8px;display:flex;align-items:center;justify-content:center;background:rgba(255,255,255,0.08)
+    }
+    .icon svg{width:20px;height:20px;fill:var(--white);opacity:0.95}
+
+    .team{margin-top:6px}
+    .team h3{margin:0 0 8px;font-size:28px}
+    .team p{margin:6px 0;font-size:18px;opacity:0.95}
+
+    /* right column - phone mockup */
+    .phone-wrap{display:flex;align-items:center;justify-content:center}
+    .phone{
+      width:320px;background:var(--card);border-radius:28px;padding:18px;box-shadow:var(--shadow);color:#222;
+      transform:translateY(6px);
+    }
+    .search{background:#f7f7f7;border-radius:12px;padding:10px 14px;margin-bottom:12px;font-weight:600;color:#9b9b9b}
+    .restaurant{display:block;border-radius:12px;overflow:hidden;background:#fff;padding:12px;margin-bottom:12px;box-shadow:0 4px 12px rgba(0,0,0,0.06);}
+    .rest-row{display:flex;gap:12px}
+    .thumb{width:76px;height:60px;background:linear-gradient(135deg,#ffd6c2,#ffb3a7);border-radius:8px;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-weight:700;color:#8b3a2c}
+    .rest-info{flex:1}
+    .rest-info h4{margin:0 0 6px;font-size:16px}
+    .meta{font-size:13px;color:#666}
+    .order-btn{display:block;margin-top:10px;background:var(--bg);color:var(--card);text-align:center;padding:10px;border-radius:10px;font-weight:700}
+
+    /* decorative shapes */
+    .blob{position:absolute;left:20px;top:40px;width:420px;height:420px;border-radius:40% 60% 50% 50%/55% 45% 55% 45%;background:rgba(0,0,0,0.03);filter:blur(24px);transform:rotate(10deg)}
+
+    /* responsive */
+    @media (max-width:980px){
+      .poster{grid-template-columns:1fr;}
+      .left{order:2;padding:28px}
+      .phone-wrap{order:1;justify-content:center;padding-bottom:18px}
+      .logo{font-size:72px}
+    }
+
+    /* print friendly */
+    @media print{
+      body{padding:0}
+      .poster{max-width:800px}
+    }
+  </style>
+</head>
+<body>
+  <div class="blob" aria-hidden></div>
+  <div class="poster" role="article" aria-label="Zomato poster">
+    <div class="left">
+      <h1 class="logo">zomato</h1>
+      <div class="subtitle">Food Delivery Web Application</div>
+      <p class="desc">A web application for ordering food from local restaurants — browse menus, place orders and track delivery in real-time. Clean design focused on discoverability and a delightful ordering flow.</p>
+
+      <div class="features" aria-hidden>
+        <div class="feature"><span class="icon"> <!-- search icon -->
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M21 21l-4.35-4.35" stroke="none"/></svg>
+        </span> Restaurant search</div>
+
+        <div class="feature"><span class="icon"> <!-- cutlery icon -->
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M7 3v10" stroke="none"/></svg>
+        </span> Menu browsing</div>
+
+        <div class="feature"><span class="icon"> <!-- checkbox icon -->
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M5 12l3 3 9-9" stroke="none"/></svg>
+        </span> Order tracking</div>
+      </div>
+
+      <div class="team">
+        <h3>Team Zomato</h3>
+        <p>Alex Johnson</p>
+        <p>Jamie Lee</p>
+        <p>Sam Patel</p>
+      </div>
+    </div>
+
+    <div class="phone-wrap">
+      <div class="phone" role="img" aria-label="Phone mockup showing restaurant results">
+        <div class="search">Search for restaurants, dishes or cuisines</div>
+
+        <div class="restaurant">
+          <div class="rest-row">
+            <div class="thumb">🍽</div>
+            <div class="rest-info">
+              <h4>The Good Bite</h4>
+              <div class="meta">⭐ 4.2 • 30-40 min • Free delivery</div>
+              <div class="order-btn">Order</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="restaurant">
+          <div class="rest-row">
+            <div class="thumb">🍲</div>
+            <div class="rest-info">
+              <h4>Pamper</h4>
+              <div class="meta">⭐ 4.4 • 25-35 min</div>
+              <div class="order-btn">Order</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</body>
+</html>
